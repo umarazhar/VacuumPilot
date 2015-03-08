@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow1">#fa9387</color>
+    <color name="yellow2">#fa9387</color>
+    <color name="orange4">#fa9387</color>
+    <color name="orange5">#fa9387</color>
+    <color name="blue2">#facc87</color>
+    <color name="blue25">#facc87</color>
+    <color name="grey05">#ACA899</color>
+    <color name="grey1">#999999</color>
+    <color name="grey3">#D2D2D2</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="white2">#DDDDDD</color>
+    <color name="app_background">#E9E9E9</color>
+    <color name="drawer_item">#FFFFFF</color>
+    <color name="grey2">#DCDCDC</color>
+    <color name="green">#4DDBB8</color>
+    <color name="studyblue">#47B7D7</color>
+    <color name="orange1">#fff57e0a</color>
+    <color name="grey4">#9E9E9E</color>
+    <color name="darkgrey">#575757</color>
+
+   <!-- <color name="app_background">#87cefa</color> -->
+</resources>

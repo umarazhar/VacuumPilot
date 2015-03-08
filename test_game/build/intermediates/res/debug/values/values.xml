@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/StudyLink%20App/test_game/test_game/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="app_background">#E9E9E9</color>
+    <color name="blue2">#facc87</color>
+    <color name="blue25">#facc87</color>
+    <color name="darkgrey">#575757</color>
+    <color name="drawer_item">#FFFFFF</color>
+    <color name="green">#4DDBB8</color>
+    <color name="grey05">#ACA899</color>
+    <color name="grey1">#999999</color>
+    <color name="grey2">#DCDCDC</color>
+    <color name="grey3">#D2D2D2</color>
+    <color name="grey4">#9E9E9E</color>
+    <color name="orange1">#fff57e0a</color>
+    <color name="orange4">#fa9387</color>
+    <color name="orange5">#fa9387</color>
+    <color name="studyblue">#47B7D7</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="white2">#DDDDDD</color>
+    <color name="yellow1">#fa9387</color>
+    <color name="yellow2">#fa9387</color>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/StudyLink%20App/test_game/test_game/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="element_default_margin">48dp</dimen>
+    <dimen name="minimum_element_height">48dp</dimen>
+    <dimen name="minimum_element_width">48dp</dimen>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/StudyLink%20App/test_game/test_game/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">VacuumPilot</string>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/StudyLink%20App/test_game/test_game/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/StudyLink%20App/test_game/test_game/src/main/res/values/themes.xml -->
+    <eat-comment/>
+    <style name="CustomActionBarTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/StudyLink%20App/test_game/test_game/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="Divider">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/grey05</item>
+    </style>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/StudyLink%20App/test_game/test_game/src/main/res/values/themes.xml -->
+    <eat-comment/>
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#ff3498db</item>
+        
+    </style>
+</resources>
