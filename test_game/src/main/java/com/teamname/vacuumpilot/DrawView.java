@@ -61,8 +61,11 @@ public class DrawView extends View implements SensorEventListener{
         float y = event.values[1];
         float z = event.values[2];
 
-        game.moveX((int)(-x));
-        game.moveY((int)y);
+        game.setVX(game.getVX() - x);
+        game.setVY(game.getVY() + y);
+
+        game.moveX();
+        game.moveY();
 
     }
 

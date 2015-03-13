@@ -18,6 +18,8 @@ public class Game extends Thread {
     private int rectWidth;
     private int rectHeight;
 
+    private double vx, vy;
+
     public Game(DrawView parent, MainActivity mainActivity, int w, int h) {
         this.parentView = parent;
         this.mainActivity = mainActivity;
@@ -31,7 +33,9 @@ public class Game extends Thread {
         rect = new Rect(0, 0, rectWidth, rectHeight);
     }
 
-    public void moveX(int dx) {
+    public void moveX() {
+
+        int dx = (int)vx;
 
         if (dx < 0) {
             dx = Math.max(0 - rect.left, dx);
@@ -42,7 +46,10 @@ public class Game extends Thread {
         rect.right += dx;
     }
 
-    public void moveY(int dy) {
+    public void moveY() {
+
+        int dy = (int)vy;
+
         if (dy < 0) {
             dy = Math.max(0 - rect.top, dy);
         } else if (dy >= 0) {
@@ -60,6 +67,22 @@ public class Game extends Thread {
         return rect.top;
     }
 
+    public void setVX(double vx) {
+        this.vx = vx;
+    }
+
+    public void setVY(double vy) {
+        this.vy = vy;
+    }
+
+    public double getVX() {
+        return vx;
+    }
+
+    public double getVY() {
+        return vy;
+    }
+
     public int getRectWidth() {
         return rectWidth;
     }
@@ -72,8 +95,10 @@ public class Game extends Thread {
         int dx = WIDTH / 2 - rect.left;
         int dy = HEIGHT / 2 - rect.top;
 
-        moveX(dx);
-        moveY(dy);
+        rect.left += dx;
+        rect.right += dx;
+        rect.top += dy;
+        rect.bottom += dy;
     }
 
     @Override
@@ -86,7 +111,7 @@ public class Game extends Thread {
                     }
                 });
             }
-            delay(20);
+            delay(10);
         }
     }
 
