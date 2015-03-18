@@ -28,12 +28,21 @@ public class GameObject {
         this.image = image;
     }
 
+    public GameObject(Bitmap image, int x, int y) {
+        this.x = x;
+        this.y = y;
+
+        this.width = image.getWidth();
+        this.height = image.getHeight();
+
+        this.image = image;
+    }
+
     public GameObject(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-
 
     }
 
@@ -88,5 +97,14 @@ public class GameObject {
 
     public Bitmap getImage() {
         return image;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getState() {
+
+        return state;
     }
 }

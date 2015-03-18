@@ -15,6 +15,10 @@ public class Player extends GameObject{
         super(image);
     }
 
+    public Player(Bitmap image, int x, int y) {
+        super(image, x, y);
+    }
+
     public Player(int x, int y, int width, int height) {
         super(x, y, width, height);
     }

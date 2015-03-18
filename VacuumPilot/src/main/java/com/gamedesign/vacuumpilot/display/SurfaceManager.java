@@ -1,13 +1,13 @@
 package com.gamedesign.vacuumpilot.display;
 
-import android.os.Handler;
 import android.content.Context;
 import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Handler;
 import android.view.Display;
-import android.view.SurfaceView;
 import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.WindowManager;
 
 public class SurfaceManager extends SurfaceView implements SurfaceHolder.Callback {

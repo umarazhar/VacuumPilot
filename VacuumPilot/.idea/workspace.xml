@@ -34,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/activity/MainActivity.java">
+      <file leaf-file-name="DisplayThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/DisplayThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="493">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1598">
+              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -47,18 +47,8 @@
       <file leaf-file-name="SurfaceManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/SurfaceManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1071">
-              <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DisplayThread.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/DisplayThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1360">
-              <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="935">
+              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -67,11 +57,14 @@
       <file leaf-file-name="GameHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="843" max-vertical-offset="2244">
-              <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="3094">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
-                <element signature="e#4498#4499#0" expanded="true" />
-                <element signature="e#4530#4531#0" expanded="true" />
+                <element signature="e#2139#2155#0" expanded="true" />
+                <element signature="e#6270#6271#0" expanded="true" />
+                <element signature="e#6302#6303#0" expanded="true" />
+                <element signature="e#6335#6336#0" expanded="true" />
+                <element signature="e#6364#6365#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,8 +73,8 @@
       <file leaf-file-name="Library.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/foundation/Library.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="782">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,13 +82,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GameObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08629441" vertical-offset="102" max-vertical-offset="1428">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="1734">
+              <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2058#2059#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,38 +98,63 @@
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding>
+                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#353#354#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhysicsHandler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PhysicsHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/physics/PhysicsHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.5177665" vertical-offset="0" max-vertical-offset="544">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/InputHandler.java">
+      <file leaf-file-name="PhysicsGameObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/PhysicsGameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1071">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1394">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#426#427#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+                <element signature="e#807#808#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#875#876#0" expanded="true" />
+                <element signature="e#900#901#0" expanded="true" />
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#968#969#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#1114#1115#0" expanded="true" />
+                <element signature="e#1164#1165#0" expanded="true" />
+                <element signature="e#1192#1193#0" expanded="true" />
+                <element signature="e#1242#1243#0" expanded="true" />
+                <element signature="e#1270#1271#0" expanded="true" />
+                <element signature="e#1320#1321#0" expanded="true" />
+                <element signature="e#1348#1349#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="PhysicsObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/physics/PhysicsObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -151,17 +170,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/SurfaceManager.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameHandler/java.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/InputHandler.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameHandler.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/SurfaceManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/foundation/Library.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/DisplayThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/graphics/SpriteManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/physics/PhysicsObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/PhysicsGameObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/physics/PhysicsHandler.java" />
       </list>
     </option>
   </component>
@@ -277,6 +300,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="physics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VacuumPilot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VacuumPilot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vacuumpilot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -426,6 +479,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="HT37HW908504" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus1" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.VacuumPilot-Application">
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -617,7 +672,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -668,64 +723,14 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="646">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/SurfaceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1071">
-          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/DisplayThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1224">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1438" max-vertical-offset="1870">
-          <caret line="100" column="49" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
-          <folding>
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4530#4531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1649">
-          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -782,8 +787,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1438" max-vertical-offset="1870">
           <caret line="100" column="49" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
           <folding>
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4530#4531#0" expanded="true" />
+            <element signature="e#2139#2155#0" expanded="true" />
+            <element signature="e#6270#6271#0" expanded="true" />
+            <element signature="e#6302#6303#0" expanded="true" />
+            <element signature="e#6335#6336#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -794,6 +802,7 @@
           <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -802,7 +811,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -859,8 +871,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="544">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
           <folding>
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4530#4531#0" expanded="true" />
+            <element signature="e#2139#2155#0" expanded="true" />
+            <element signature="e#6270#6271#0" expanded="true" />
+            <element signature="e#6302#6303#0" expanded="true" />
+            <element signature="e#6335#6336#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -871,6 +886,7 @@
           <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1004,10 +1020,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/physics/PhysicsHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="493">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5609137" vertical-offset="34" max-vertical-offset="663">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1022,40 +1057,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/SurfaceManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="935">
-          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="493">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="935">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/foundation/Library.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="782">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1064,30 +1075,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/display/DisplayThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1360">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1598">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/r/com/gamedesign/vacuumpilot/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6167512" vertical-offset="1425" max-vertical-offset="1819">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#4300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/com/gamedesign/vacuumpilot/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21573605" vertical-offset="0" max-vertical-offset="394">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/com/gamedesign/vacuumpilot/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21573605" vertical-offset="0" max-vertical-offset="394">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/graphics/SpriteManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21573605" vertical-offset="0" max-vertical-offset="394">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="843" max-vertical-offset="2244">
-          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3094">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4530#4531#0" expanded="true" />
+            <element signature="e#2139#2155#0" expanded="true" />
+            <element signature="e#6270#6271#0" expanded="true" />
+            <element signature="e#6302#6303#0" expanded="true" />
+            <element signature="e#6335#6336#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/physics/PhysicsObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08629441" vertical-offset="102" max-vertical-offset="1428">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="1734">
+          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/game/PhysicsGameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1394">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gamedesign/vacuumpilot/physics/PhysicsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5177665" vertical-offset="0" max-vertical-offset="544">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

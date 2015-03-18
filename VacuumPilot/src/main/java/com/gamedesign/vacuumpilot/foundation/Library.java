@@ -19,6 +19,7 @@ public class Library {
         matrix.postScale(scaleWidth, scaleHeight);
 
         Bitmap newImage = Bitmap.createBitmap(image, 0, 0, width, height, matrix, false);
+        image.recycle();
         return newImage;
 
     }

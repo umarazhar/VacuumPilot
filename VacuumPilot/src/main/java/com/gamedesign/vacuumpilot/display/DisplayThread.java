@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.os.Handler;
 import android.view.SurfaceHolder;
 
@@ -32,7 +31,7 @@ public class DisplayThread extends Thread {
         this.ctx = context;
         this.handler = hl;
 
-        gameHandler = GameHandler.initGame();
+        gameHandler = GameHandler.initGame(ctx);
         inputHandler = InputHandler.initHandler(0, 0);
 
         paint = new Paint();
@@ -45,27 +44,41 @@ public class DisplayThread extends Thread {
 
         ArrayList<GameObject> tmpList = gameHandler.getObstacles();
 
-        Rect tmpRect;
         for (GameObject tmp : tmpList) {
-            tmpRect = new Rect();
-            tmpRect.left = (int)tmp.getX();
-            tmpRect.top = (int)tmp.getY();
-            tmpRect.right = (int)(tmp.getX() + tmp.getWidth());
-            tmpRect.bottom = (int)(tmp.getY() + tmp.getHeight());
-
-            canvas.drawRect(tmpRect, paint);
-
+            canvas.drawBitmap(tmp.getImage(), (float)tmp.getX(), (float)tmp.getY(), paint);
         }
+
+//        Rect tmpRect;
+//        for (GameObject tmp : tmpList) {
+//            tmpRect = new Rect();
+//            tmpRect.left = (int)tmp.getX();
+//            tmpRect.top = (int)tmp.getY();
+//            tmpRect.right = (int)(tmp.getX() + tmp.getWidth());
+//            tmpRect.bottom = (int)(tmp.getY() + tmp.getHeight());
+//
+//            canvas.drawRect(tmpRect, paint);
+//
+//        }
+    }
+
+    private void drawPlayer(Canvas canvas) {
+        GameObject player = gameHandler.getPlayer();
+        canvas.drawBitmap(player.getImage(), (float)player.getX(), (float)player.getY(), paint);
+//        Log.d("Player Position", "X: " + player.getX());
+//        Log.d("Player Position", "Y: " + player.getY());
     }
 
     public void doDraw(Canvas canvas) {
-        canvas.drawColor(Color.BLACK);
+        canvas.drawColor(Color.WHITE);
 
         drawGameObjects(canvas);
+
+        drawPlayer(canvas);
 
     }
 
     public void run() {
+
         while (running) {
             Canvas c = null;
 
