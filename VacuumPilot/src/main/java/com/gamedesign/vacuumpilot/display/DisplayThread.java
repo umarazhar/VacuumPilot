@@ -85,7 +85,9 @@ public class DisplayThread extends Thread {
             try {
                 c = sh.lockCanvas(null);
                 synchronized(sh) {
-                    doDraw(c);
+                    if (c != null) {
+                        doDraw(c);
+                    }
                     gameHandler.update();
                     Library.delay(30);
                 }

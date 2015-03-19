@@ -1,7 +1,6 @@
 package com.gamedesign.vacuumpilot.game;
 
-import android.graphics.Bitmap;
-
+import com.gamedesign.vacuumpilot.graphics.SpriteManager;
 import com.gamedesign.vacuumpilot.physics.PhysicsObject;
 
 /**
@@ -9,18 +8,21 @@ import com.gamedesign.vacuumpilot.physics.PhysicsObject;
  */
 public class PhysicsGameObject extends GameObject implements PhysicsObject {
 
-    private double vx, vy;
-    private double ax, ay;
+    private boolean standard = true;
+    private boolean special = true;
+
+    private double vx = 0, vy = 0;
+    private double ax = 0, ay = 0;
 
     public PhysicsGameObject() {
 
     }
 
-    public PhysicsGameObject(Bitmap image) {
+    public PhysicsGameObject(SpriteManager image) {
         super(image);
     }
 
-    public PhysicsGameObject(Bitmap image, int x, int y) {
+    public PhysicsGameObject(SpriteManager image, int x, int y) {
         super(image, x, y);
     }
 
@@ -29,8 +31,18 @@ public class PhysicsGameObject extends GameObject implements PhysicsObject {
 
     }
 
-    public PhysicsGameObject(Bitmap image, int x, int y, int width, int height) {
-        super(image, x, y, width, height);
+//    public PhysicsGameObject(SpriteManager image, int x, int y, int width, int height) {
+//        super(image, x, y, width, height);
+//    }
+
+    public void update() {
+        super.update();
+
+        this.vx += this.ax;
+        this.vy += this.ay;
+
+        this.setX(this.getX() + this.vx);
+        this.setY(this.getY() + this.vy);
     }
 
     @Override
@@ -53,6 +65,14 @@ public class PhysicsGameObject extends GameObject implements PhysicsObject {
         return ay;
     }
 
+    public boolean isStandard() {
+        return standard;
+    }
+
+    public boolean isSpecial() {
+        return special;
+    }
+
     @Override
     public void setVX(double vx) {
         this.vx = vx;
@@ -73,4 +93,11 @@ public class PhysicsGameObject extends GameObject implements PhysicsObject {
         this.ay = ay;
     }
 
+    public void setStandard(boolean standard) {
+        this.standard = standard;
+    }
+
+    public void setSpecial(boolean special) {
+        this.special = special;
+    }
 }

@@ -3,10 +3,13 @@ package com.gamedesign.vacuumpilot.game;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
+import android.view.MotionEvent;
 
 import com.gamedesign.vacuumpilot.R;
 import com.gamedesign.vacuumpilot.display.InputHandler;
 import com.gamedesign.vacuumpilot.foundation.Library;
+import com.gamedesign.vacuumpilot.graphics.SpriteManager;
 import com.gamedesign.vacuumpilot.physics.PhysicsHandler;
 
 import java.util.ArrayList;
@@ -82,6 +85,7 @@ public class GameHandler {
 
         obstacles = new ArrayList<GameObject>();
         inputHandler = InputHandler.initHandler(0, 0);
+        physicsHandler = PhysicsHandler.initPhysics();
 
         loadImages();
 
@@ -95,19 +99,25 @@ public class GameHandler {
     }
 
     private void initPlayer() {
-        player = new Player(BitmapFactory.decodeResource(ctx.getResources(), R.drawable.airplane1));
+        Bitmap[] tmp = {images.get("player1")};
+        player = new Player(new SpriteManager(tmp));
 
         player.setX((double)PLAYER_START_X);
         player.setY(PLAYER_START_Y - (double)player.getHeight() / 2);
 
-        player_upper_bound = inputHandler.height / 4;
-        player_lower_bound = 3 * inputHandler.height / 4;
+        player_upper_bound = inputHandler.height / 2 - 100;
+        player_lower_bound = inputHandler.height / 2 + 100;
         player_left_bound = 200;
         player_right_bound = player_left_bound;
+
+        physicsHandler.addObject(player);
     }
 
     private void loadImages() {
         Bitmap tmpImage;
+
+        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.airplane1);
+        images.put("player1", tmpImage);
 
         tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon1);
         images.put("balloon1", tmpImage);
@@ -128,7 +138,27 @@ public class GameHandler {
     }
 
     public void update() {
-        double max = obstacles.get(0).getX();
+        double max = 0;
+
+        Log.d("Player Position", "X: " + player.getX() + "\tY: " + player.getY());
+        physicsHandler.update();
+
+        int offset_x = -DEFAULT_SPEED;
+        int offset_y = 0;
+
+        if (player.getY() > player_lower_bound) {
+            offset_y = (int)(player.getY() - player_lower_bound);
+            player.setY((double)player_lower_bound);
+        } else if (player.getY() < player_upper_bound) {
+            offset_y = (int)(player.getY() - player_upper_bound);
+            player.setY((double)player_upper_bound);
+        }
+
+        for (GameObject tmp : obstacles) {
+            tmp.setX(tmp.getX() + offset_x);
+            tmp.setY(tmp.getY() - offset_y);
+        }
+
         for (int i = 0; i < obstacles.size(); i++) {
             if (obstacles.get(i).getX() + obstacles.get(i).getWidth() < 0) {
                 obstacles.remove(i);
@@ -140,10 +170,12 @@ public class GameHandler {
         if (max < TRIGGER_OBSTACLE_GENERATION)
             generateObstacles((int)(max + DEFAULT_OBSTACLE_SPACING));
 
-        for (GameObject tmp : obstacles) {
-            tmp.setX(tmp.getX() - DEFAULT_SPEED);
-        }
+    }
 
+    private void createGravityWells() {
+        if (inputHandler.touch_m == MotionEvent.ACTION_DOWN) {
+
+        }
     }
 
     private void generateObstacles(int start_pos) {
@@ -153,27 +185,42 @@ public class GameHandler {
             int mid_screen = inputHandler.height / 2;
 
             for (int j = 0; j < numObstacles; j++) {
+                //eventually change this because the screen will be able to shift up and down
                 int ypos = Library.randint(j * mid_screen, j * mid_screen + mid_screen);
                 int xpos = Library.randint(i - OBSTACLE_POSITIONING_VARIANCE, i + OBSTACLE_POSITIONING_VARIANCE);
 
-                int orient = Library.randint(1, 3);
-                int obstacle_width = Library.randint(OBSTACLE_DEFAULT_WIDTH - OBSTACLE_WIDTH_VARIANCE, OBSTACLE_DEFAULT_WIDTH + OBSTACLE_WIDTH_VARIANCE);
-                int obstacle_height = Library.randint(OBSTACLE_DEFAULT_HEIGHT - OBSTACLE_HEIGHT_VARIANCE, OBSTACLE_DEFAULT_HEIGHT + OBSTACLE_HEIGHT_VARIANCE);
+//                int orient = Library.randint(1, 3);
+//                int obstacle_width = Library.randint(OBSTACLE_DEFAULT_WIDTH - OBSTACLE_WIDTH_VARIANCE, OBSTACLE_DEFAULT_WIDTH + OBSTACLE_WIDTH_VARIANCE);
+//                int obstacle_height = Library.randint(OBSTACLE_DEFAULT_HEIGHT - OBSTACLE_HEIGHT_VARIANCE, OBSTACLE_DEFAULT_HEIGHT + OBSTACLE_HEIGHT_VARIANCE);
 
-                GameObject newObject;
-                if (orient == 1) {
-                    newObject = new GameObject(xpos, ypos, obstacle_width, obstacle_height);
-                } else {
-                    newObject = new GameObject(xpos, ypos, obstacle_height, obstacle_width);
-                }
+                PhysicsGameObject newObject;
+//                if (orient == 1) {
+//                    newObject = new PhysicsGameObject(xpos, ypos, obstacle_width, obstacle_height);
+//                } else {
+//                    newObject = new PhysicsGameObject(xpos, ypos, obstacle_height, obstacle_width);
+//                }
 
                 int balloon_num = Library.randint(1,5);
-                newObject = new GameObject(images.get("balloon" + balloon_num), xpos, ypos);
 
-                obstacles.add(newObject);
+                Bitmap[] tmp = new Bitmap[1];
+                tmp[0] = images.get("balloon" + balloon_num);
 
+                newObject = new PhysicsGameObject(new SpriteManager(tmp), xpos, ypos);
+                newObject.setStandard(false);
+
+//                obstacles.add(newObject);
+                addPhysicsObject(newObject);
             }
         }
+    }
+
+    private void addObject(GameObject object) {
+        this.obstacles.add(object);
+    }
+
+    private void addPhysicsObject(PhysicsGameObject object) {
+        physicsHandler.addObject(object);
+        addObject(object);
     }
 
     public ArrayList<GameObject> getObstacles() {

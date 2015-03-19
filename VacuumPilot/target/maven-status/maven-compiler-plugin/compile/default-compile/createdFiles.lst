@@ -5,6 +5,7 @@ com\gamedesign\vacuumpilot\BuildConfig.class
 com\gamedesign\vacuumpilot\R$dimen.class
 com\gamedesign\vacuumpilot\R$drawable.class
 com\gamedesign\vacuumpilot\graphics\SpriteManager.class
+com\gamedesign\vacuumpilot\game\GravityWell.class
 com\gamedesign\vacuumpilot\display\DisplayThread.class
 com\gamedesign\vacuumpilot\physics\PhysicsHandler.class
 com\gamedesign\vacuumpilot\foundation\Library.class
