@@ -9,13 +9,16 @@ import com.gamedesign.vacuumpilot.graphics.SpriteManager;
  */
 public class GameObject {
 
-    private final String DEFAULT_STATE = "Alive";
+    public static final String DESTROYED_STATE = "Destroyed";
+    public static final String GROWING_STATE = "Growing";
+    public static final String ALIVE_STATE = "Alive";
+    protected final String DEFAULT_STATE = ALIVE_STATE;
 
     private int width, height;
     private double x, y;
     private SpriteManager image;
 
-    private String state;
+    private String state = DEFAULT_STATE;
 
     public GameObject() {
 
@@ -56,7 +59,11 @@ public class GameObject {
 //    }
 
     public void update() {
+        image.update();
+    }
 
+    public boolean isDestroyed() {
+        return (state.equals(DESTROYED_STATE));
     }
 
     public void setWidth(int width) {

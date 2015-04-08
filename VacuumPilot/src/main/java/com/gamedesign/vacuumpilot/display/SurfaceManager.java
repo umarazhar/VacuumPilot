@@ -22,6 +22,8 @@ public class SurfaceManager extends SurfaceView implements SurfaceHolder.Callbac
 
     public SurfaceManager(Context context) {
         super(context);
+
+        setDrawingCacheEnabled(true);
         sh = getHolder();
 
         sh.addCallback(this);
@@ -44,6 +46,8 @@ public class SurfaceManager extends SurfaceView implements SurfaceHolder.Callbac
     }
 
     public void surfaceCreated(SurfaceHolder holder) {
+
+
         displayThread = new DisplayThread(sh, ctx, new Handler());
         displayThread.start();
     }

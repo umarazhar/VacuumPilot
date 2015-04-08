@@ -1,7 +1,6 @@
 package com.gamedesign.vacuumpilot.foundation;
 
 import android.graphics.Bitmap;
-import android.graphics.Matrix;
 
 /**
  * Created by Lenovo-USER on 3/17/2015.
@@ -12,13 +11,12 @@ public class Library {
         int curWidth = image.getWidth();
         int curHeight = image.getHeight();
 
-        float scaleWidth = ((float)width) / curWidth;
-        float scaleHeight = ((float)height) / curHeight;
+        float ratio = Math.min(((float)width) / curWidth, ((float)height) / curHeight);
 
-        Matrix matrix = new Matrix();
-        matrix.postScale(scaleWidth, scaleHeight);
+//        Matrix matrix = new Matrix();
+//        matrix.setScale(scaleWidth, scaleHeight);
 
-        Bitmap newImage = Bitmap.createBitmap(image, 0, 0, width, height, matrix, false);
+        Bitmap newImage = Bitmap.createScaledBitmap(image, (int)(width * ratio), (int)(height * ratio), false);
         image.recycle();
         return newImage;
 

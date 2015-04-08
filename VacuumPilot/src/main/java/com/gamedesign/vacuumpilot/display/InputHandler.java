@@ -16,7 +16,7 @@ public class InputHandler implements SensorEventListener, View.OnTouchListener {
     public int height;
 
     public float touch_x, touch_y;
-    public int touch_m = 0;
+    public int touch_m = MotionEvent.ACTION_UP;
 
     public float accel_x, accel_y, accel_z;
 
@@ -39,9 +39,19 @@ public class InputHandler implements SensorEventListener, View.OnTouchListener {
         touch_x = event.getX();
         touch_y = event.getY();
 
-        touch_m = event.getAction();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                touch_m = MotionEvent.ACTION_DOWN;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_UP:
+                touch_m = MotionEvent.ACTION_UP;
+                break;
 
-        return true;
+        }
+
+        return (touch_m == MotionEvent.ACTION_DOWN);
     }
 
     @Override

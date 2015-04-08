@@ -15,7 +15,7 @@ public class PhysicsGameObject extends GameObject implements PhysicsObject {
     private double ax = 0, ay = 0;
 
     public PhysicsGameObject() {
-
+        super();
     }
 
     public PhysicsGameObject(SpriteManager image) {
@@ -43,6 +43,10 @@ public class PhysicsGameObject extends GameObject implements PhysicsObject {
 
         this.setX(this.getX() + this.vx);
         this.setY(this.getY() + this.vy);
+
+        if (getX() + getWidth() < 0) {
+            setState(DESTROYED_STATE);
+        }
     }
 
     @Override

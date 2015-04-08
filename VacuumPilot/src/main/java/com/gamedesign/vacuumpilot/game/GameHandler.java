@@ -3,17 +3,20 @@ package com.gamedesign.vacuumpilot.game;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
+import android.graphics.Rect;
 import android.view.MotionEvent;
 
 import com.gamedesign.vacuumpilot.R;
 import com.gamedesign.vacuumpilot.display.InputHandler;
 import com.gamedesign.vacuumpilot.foundation.Library;
+import com.gamedesign.vacuumpilot.graphics.BackgroundImage;
+import com.gamedesign.vacuumpilot.graphics.BackgroundManager;
 import com.gamedesign.vacuumpilot.graphics.SpriteManager;
 import com.gamedesign.vacuumpilot.physics.PhysicsHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by Lenovo-USER on 3/15/2015.
@@ -61,9 +64,9 @@ public class GameHandler {
     private final int PLAYER_START_Y;
 
     //default scrolling speed of the game
-    private final int DEFAULT_SPEED = 10;
+    private final int DEFAULT_SPEED = 0;
 
-    private final HashMap<String, Bitmap> images = new HashMap<String, Bitmap>();
+    private final HashMap<String, Bitmap[]> images = new HashMap<String, Bitmap[]>();
 
     private Context ctx;
 
@@ -75,17 +78,28 @@ public class GameHandler {
 
     private Player player;
 
+    private BackgroundManager background;
+
     //the absolute positioning on the screen which binds the player
     private int player_upper_bound, player_lower_bound, player_left_bound, player_right_bound;
 
     private ArrayList<GameObject> obstacles;
+//    private ArrayList<GravityWell> gravityWells;
+
+    private GravityWell currentWell = null;
 
     private GameHandler(Context ctx) {
         this.ctx = ctx;
 
         obstacles = new ArrayList<GameObject>();
+//        gravityWells = new ArrayList<GravityWell>();
         inputHandler = InputHandler.initHandler(0, 0);
         physicsHandler = PhysicsHandler.initPhysics();
+
+        Bitmap[] tmpImage = new Bitmap[1];
+        tmpImage[0] = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.mainbackground);
+
+        background = new BackgroundManager(new SpriteManager(tmpImage));
 
         loadImages();
 
@@ -99,34 +113,64 @@ public class GameHandler {
     }
 
     private void initPlayer() {
-        Bitmap[] tmp = {images.get("player1")};
-        player = new Player(new SpriteManager(tmp));
+//        Bitmap[] tmp = {images.get("player1")};
+        player = new Player(new SpriteManager(images.get("player1")));
+
+        Bitmap[] tmp = new Bitmap[1];
+
+        tmp[0] = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.damaged_airplane);
+        player.setCrashImage(new SpriteManager(tmp));
 
         player.setX((double)PLAYER_START_X);
         player.setY(PLAYER_START_Y - (double)player.getHeight() / 2);
 
         player_upper_bound = inputHandler.height / 2 - 100;
         player_lower_bound = inputHandler.height / 2 + 100;
-        player_left_bound = 200;
-        player_right_bound = player_left_bound;
+        player_left_bound = 100;
+        player_right_bound = 300;
 
         physicsHandler.addObject(player);
     }
 
     private void loadImages() {
-        Bitmap tmpImage;
+        Bitmap[] tmpImage;
 
-        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.airplane1);
+//        tmpImage = new Bitmap[1];
+//        tmpImage[0] = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.mainbackground);
+//
+//        backgroundImage = new SpriteManager(tmpImage);
+
+        tmpImage = new Bitmap[1];
+        tmpImage[0] = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.airplane1);
+
+
         images.put("player1", tmpImage);
 
-        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon1);
-        images.put("balloon1", tmpImage);
-        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon2);
-        images.put("balloon2", tmpImage);
-        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon3);
-        images.put("balloon3", tmpImage);
-        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon4);
-        images.put("balloon4", tmpImage);
+        tmpImage = new Bitmap[18];
+        int imageres;
+        for (int i = 1; i <= 18; i++) {
+            imageres = ctx.getResources().getIdentifier("drawable/sat" + i, null, ctx.getPackageName());
+            tmpImage[i - 1] = BitmapFactory.decodeResource(ctx.getResources(), imageres);
+        }
+        images.put("satellite1", tmpImage);
+
+        tmpImage = new Bitmap[18];
+        for (int i = 1; i <= 18; i++) {
+            imageres = ctx.getResources().getIdentifier("drawable/blackhole" + i, null, ctx.getPackageName());
+            Bitmap unsizedImage = BitmapFactory.decodeResource(ctx.getResources(), imageres);
+            tmpImage[i - 1] = Library.resizedBitmap(unsizedImage, 400, 400);
+        }
+
+        images.put("blackhole1", tmpImage);
+
+//        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon1);
+//        images.put("balloon1", tmpImage);
+//        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon2);
+//        images.put("balloon2", tmpImage);
+//        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon3);
+//        images.put("balloon3", tmpImage);
+//        tmpImage = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.balloon4);
+//        images.put("balloon4", tmpImage);
     }
 
     public static GameHandler initGame(Context ctx) {
@@ -140,18 +184,30 @@ public class GameHandler {
     public void update() {
         double max = 0;
 
-        Log.d("Player Position", "X: " + player.getX() + "\tY: " + player.getY());
-        physicsHandler.update();
+        background.update();
+
+//        Log.d("Player Position", "X: " + player.getX() + "\tY: " + player.getY());
+        if (!player.isDestroyed())
+            physicsHandler.update();
+        createGravityWells();
 
         int offset_x = -DEFAULT_SPEED;
         int offset_y = 0;
 
         if (player.getY() > player_lower_bound) {
-            offset_y = (int)(player.getY() - player_lower_bound);
+            offset_y += (int)(player.getY() - player_lower_bound);
             player.setY((double)player_lower_bound);
         } else if (player.getY() < player_upper_bound) {
-            offset_y = (int)(player.getY() - player_upper_bound);
+            offset_y += (int)(player.getY() - player_upper_bound);
             player.setY((double)player_upper_bound);
+        }
+
+        if (player.getX() > player_right_bound) {
+            offset_x -= (int)(player.getX() - player_right_bound);
+            player.setX((double)player_right_bound);
+        } else if (player.getX() < player_left_bound) {
+            offset_x -= (int)(player.getX() - player_left_bound);
+            player.setX((double)player_left_bound);
         }
 
         for (GameObject tmp : obstacles) {
@@ -159,22 +215,49 @@ public class GameHandler {
             tmp.setY(tmp.getY() - offset_y);
         }
 
+        background.translate(offset_x, -offset_y);
+
+//        backgroundx += offset_x;
+//        backgroundy -= offset_y;
+
+        ArrayList<GameObject> toDelete = new ArrayList<GameObject>();
+
         for (int i = 0; i < obstacles.size(); i++) {
-            if (obstacles.get(i).getX() + obstacles.get(i).getWidth() < 0) {
-                obstacles.remove(i);
-                continue;
+            obstacles.get(i).update();
+            if (obstacles.get(i).isDestroyed()) {
+                toDelete.add(obstacles.get(i));
             }
             max = Math.max(obstacles.get(i).getX(), max);
+        }
+
+        for (GameObject tmp: toDelete) {
+            if (tmp.getClass() == GravityWell.class)
+                physicsHandler.deleteGravityWells((GravityWell)tmp);
+            obstacles.remove(tmp);
         }
 
         if (max < TRIGGER_OBSTACLE_GENERATION)
             generateObstacles((int)(max + DEFAULT_OBSTACLE_SPACING));
 
+        checkCollisions();
+
     }
 
     private void createGravityWells() {
-        if (inputHandler.touch_m == MotionEvent.ACTION_DOWN) {
+//        Log.d("Gravity Well", "Pressed: " + (inputHandler.touch_m == MotionEvent.ACTION_DOWN));
+        if (inputHandler.touch_m == MotionEvent.ACTION_DOWN && currentWell == null) {
+            GravityWell tmp = new GravityWell(new SpriteManager(images.get("blackhole1")), (int)inputHandler.touch_x, (int)inputHandler.touch_y);
+            physicsHandler.addGravityWell(tmp);
+            currentWell = tmp;
+        } else if (inputHandler.touch_m == MotionEvent.ACTION_UP && currentWell != null) {
+            currentWell.setAlive();
+            addObject(currentWell);
+            currentWell = null;
+        }
 
+        if (currentWell != null) {
+//            Log.d("Gravity Well", "Strength: " + currentWell.getGravity());
+            currentWell.increaseStrength();
         }
     }
 
@@ -203,10 +286,11 @@ public class GameHandler {
                 int balloon_num = Library.randint(1,5);
 
                 Bitmap[] tmp = new Bitmap[1];
-                tmp[0] = images.get("balloon" + balloon_num);
+//                tmp[0] = images.get("satellite1" + balloon_num);
 
-                newObject = new PhysicsGameObject(new SpriteManager(tmp), xpos, ypos);
+                newObject = new PhysicsGameObject(new SpriteManager(images.get("satellite1")), xpos, ypos);
                 newObject.setStandard(false);
+                newObject.setSpecial(false);
 
 //                obstacles.add(newObject);
                 addPhysicsObject(newObject);
@@ -223,6 +307,21 @@ public class GameHandler {
         addObject(object);
     }
 
+    private void checkCollisions() {
+        Rect playerRect = new Rect((int)player.getX(), (int)player.getY(), (int)player.getX() + player.getWidth(), (int)player.getY() + player.getHeight());
+        Rect tmpRect;
+        for (GameObject tmpObject : obstacles) {
+            tmpRect = new Rect((int)tmpObject.getX(), (int)tmpObject.getY(), (int)tmpObject.getX() + tmpObject.getWidth(), (int)tmpObject.getY() + tmpObject.getHeight());
+            if (playerRect.intersect(tmpRect)) {
+                player.crashed();
+            }
+        }
+    }
+
+    public ArrayList<GravityWell> getGravityWell() {
+        return physicsHandler.getGravityWells();
+    }
+
     public ArrayList<GameObject> getObstacles() {
         return obstacles;
     }
@@ -230,4 +329,29 @@ public class GameHandler {
     public Player getPlayer() {
         return player;
     }
+
+    public ArrayList<GravityWell> getGravityWells() {
+        return physicsHandler.getGravityWells();
+    }
+
+    public int getPlayerUpperBound() {
+        return player_upper_bound;
+    }
+
+    public int getPlayerLowerBound() {
+        return player_lower_bound;
+    }
+
+    public int getPlayerRightBound() {
+        return player_right_bound;
+    }
+
+    public int getPlayerLeftBound() {
+        return player_left_bound;
+    }
+
+    public ConcurrentLinkedQueue<BackgroundImage> getBackgroundImages() {
+        return background.getImages();
+    }
+
 }
