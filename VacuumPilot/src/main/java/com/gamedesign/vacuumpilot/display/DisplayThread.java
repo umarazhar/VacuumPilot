@@ -222,6 +222,10 @@ public class DisplayThread extends Thread {
 //            }
 //        }
 
+        paint.setTextSize(40);
+        paint.setColor(Color.RED);
+        bitmapCanvas.drawText("Score: " + gameHandler.getScore(), 100, 60, paint);
+
         canvas.drawBitmap(canvasImage, 0, 0, null);
     }
 

@@ -17,7 +17,8 @@ public class SpriteManager {
     private int index = 0;
     private int counter = 0;
 
-    private int inc_time = DEFAULT_INC_TIME;
+    private int switchTime = DEFAULT_INC_TIME;
+    private int cycles = -1;
 
     public SpriteManager(Bitmap[] arr) {
         this.sprite = arr;
@@ -25,10 +26,10 @@ public class SpriteManager {
         calcSize();
     }
 
-    public SpriteManager(Bitmap[] arr, int inc_time) {
+    public SpriteManager(Bitmap[] arr, int switchTime) {
         this.sprite = arr;
         this.currentImage = this.sprite[index];
-        this.inc_time = inc_time;
+        this.switchTime = switchTime;
         calcSize();
     }
 
@@ -42,7 +43,7 @@ public class SpriteManager {
     public void update() {
         counter++;
 
-        if (counter % inc_time == 0) {
+        if (counter % switchTime == 0) {
             index = (index + 1) % sprite.length;
             currentImage = sprite[index];
         }
@@ -50,6 +51,10 @@ public class SpriteManager {
 
     public Bitmap getCurrentImage() {
         return currentImage;
+    }
+
+    public Bitmap getLastImage() {
+        return sprite[sprite.length - 1];
     }
 
     public void setSprite(Bitmap[] sprite) {
@@ -76,5 +81,9 @@ public class SpriteManager {
      */
     public int getHeight() {
         return height;
+    }
+
+    public void setSwitchTime(int switchTime) {
+        this.switchTime = switchTime;
     }
 }

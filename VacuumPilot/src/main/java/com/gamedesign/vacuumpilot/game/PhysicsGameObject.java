@@ -38,14 +38,16 @@ public class PhysicsGameObject extends GameObject implements PhysicsObject {
     public void update() {
         super.update();
 
-        this.vx += this.ax;
-        this.vy += this.ay;
+        if (!getState().equals(GameObject.DESTROYED_STATE)) {
+            this.vx += this.ax;
+            this.vy += this.ay;
 
-        this.setX(this.getX() + this.vx);
-        this.setY(this.getY() + this.vy);
+            this.setX(this.getX() + this.vx);
+            this.setY(this.getY() + this.vy);
 
-        if (getX() + getWidth() < 0) {
-            setState(DESTROYED_STATE);
+            if (getX() + getWidth() < 0) {
+                setState(DESTROYED_STATE);
+            }
         }
     }
 

@@ -82,4 +82,8 @@ public class BackgroundManager {
     public ConcurrentLinkedQueue<BackgroundImage> getImages() {
         return images;
     }
+
+    public BackgroundImage getFirstImage() {
+        return images.peek();
+    }
 }

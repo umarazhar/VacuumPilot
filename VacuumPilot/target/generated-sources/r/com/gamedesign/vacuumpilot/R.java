@@ -11,25 +11,9 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int app_background=0x7f03000b;
-        public static final int blue2=0x7f030004;
-        public static final int blue25=0x7f030005;
-        public static final int darkgrey=0x7f030012;
-        public static final int drawer_item=0x7f03000c;
-        public static final int green=0x7f03000e;
-        public static final int grey05=0x7f030006;
-        public static final int grey1=0x7f030007;
-        public static final int grey2=0x7f03000d;
-        public static final int grey3=0x7f030008;
-        public static final int grey4=0x7f030011;
-        public static final int orange1=0x7f030010;
-        public static final int orange4=0x7f030002;
-        public static final int orange5=0x7f030003;
-        public static final int studyblue=0x7f03000f;
-        public static final int white1=0x7f030009;
-        public static final int white2=0x7f03000a;
-        public static final int yellow1=0x7f030000;
-        public static final int yellow2=0x7f030001;
+        public static final int blue=0x7f040000;
+        public static final int grey05=0x7f040002;
+        public static final int orange1=0x7f040001;
     }
     public static final class dimen {
         /** 
@@ -38,30 +22,171 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040003;
+        public static final int activity_horizontal_margin=0x7f050003;
         /**  Default screen margins, per the Android Design guidelines. 
          */
-        public static final int element_default_margin=0x7f040000;
-        public static final int minimum_element_height=0x7f040002;
-        public static final int minimum_element_width=0x7f040001;
+        public static final int element_default_margin=0x7f050000;
+        public static final int minimum_element_height=0x7f050002;
+        public static final int minimum_element_width=0x7f050001;
     }
     public static final class drawable {
-        public static final int balloon_bg=0x7f020000;
-        public static final int button_default_bg=0x7f020001;
-        public static final int edittext_bottom_bg=0x7f020002;
-        public static final int edittext_default_bg=0x7f020003;
-        public static final int edittext_top_bg=0x7f020004;
-        public static final int email=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int linearlayout_bg=0x7f020007;
-        public static final int notification_icon=0x7f020008;
-        public static final int password=0x7f020009;
-        public static final int studylink_icon=0x7f02000a;
-        public static final int user=0x7f02000b;
-        public static final int vacuumpilot_icon=0x7f02000c;
+        public static final int airplane1=0x7f020000;
+        public static final int balloon1=0x7f020001;
+        public static final int balloon2=0x7f020002;
+        public static final int balloon3=0x7f020003;
+        public static final int balloon4=0x7f020004;
+        public static final int balloon_bg=0x7f020005;
+        public static final int blackhole1=0x7f020006;
+        public static final int blackhole10=0x7f020007;
+        public static final int blackhole11=0x7f020008;
+        public static final int blackhole12=0x7f020009;
+        public static final int blackhole13=0x7f02000a;
+        public static final int blackhole14=0x7f02000b;
+        public static final int blackhole15=0x7f02000c;
+        public static final int blackhole16=0x7f02000d;
+        public static final int blackhole17=0x7f02000e;
+        public static final int blackhole18=0x7f02000f;
+        public static final int blackhole2=0x7f020010;
+        public static final int blackhole3=0x7f020011;
+        public static final int blackhole4=0x7f020012;
+        public static final int blackhole5=0x7f020013;
+        public static final int blackhole6=0x7f020014;
+        public static final int blackhole7=0x7f020015;
+        public static final int blackhole8=0x7f020016;
+        public static final int blackhole9=0x7f020017;
+        public static final int button_default_bg=0x7f020018;
+        public static final int damaged_airplane=0x7f020019;
+        public static final int edittext_bottom_bg=0x7f02001a;
+        public static final int edittext_default_bg=0x7f02001b;
+        public static final int edittext_top_bg=0x7f02001c;
+        public static final int email=0x7f02001d;
+        public static final int explosion1=0x7f02001e;
+        public static final int explosion10=0x7f02001f;
+        public static final int explosion11=0x7f020020;
+        public static final int explosion12=0x7f020021;
+        public static final int explosion13=0x7f020022;
+        public static final int explosion14=0x7f020023;
+        public static final int explosion15=0x7f020024;
+        public static final int explosion16=0x7f020025;
+        public static final int explosion17=0x7f020026;
+        public static final int explosion18=0x7f020027;
+        public static final int explosion19=0x7f020028;
+        public static final int explosion2=0x7f020029;
+        public static final int explosion20=0x7f02002a;
+        public static final int explosion21=0x7f02002b;
+        public static final int explosion22=0x7f02002c;
+        public static final int explosion23=0x7f02002d;
+        public static final int explosion24=0x7f02002e;
+        public static final int explosion25=0x7f02002f;
+        public static final int explosion26=0x7f020030;
+        public static final int explosion27=0x7f020031;
+        public static final int explosion28=0x7f020032;
+        public static final int explosion29=0x7f020033;
+        public static final int explosion3=0x7f020034;
+        public static final int explosion30=0x7f020035;
+        public static final int explosion31=0x7f020036;
+        public static final int explosion32=0x7f020037;
+        public static final int explosion33=0x7f020038;
+        public static final int explosion34=0x7f020039;
+        public static final int explosion35=0x7f02003a;
+        public static final int explosion36=0x7f02003b;
+        public static final int explosion37=0x7f02003c;
+        public static final int explosion38=0x7f02003d;
+        public static final int explosion39=0x7f02003e;
+        public static final int explosion4=0x7f02003f;
+        public static final int explosion40=0x7f020040;
+        public static final int explosion41=0x7f020041;
+        public static final int explosion42=0x7f020042;
+        public static final int explosion43=0x7f020043;
+        public static final int explosion44=0x7f020044;
+        public static final int explosion45=0x7f020045;
+        public static final int explosion46=0x7f020046;
+        public static final int explosion47=0x7f020047;
+        public static final int explosion48=0x7f020048;
+        public static final int explosion49=0x7f020049;
+        public static final int explosion5=0x7f02004a;
+        public static final int explosion50=0x7f02004b;
+        public static final int explosion51=0x7f02004c;
+        public static final int explosion52=0x7f02004d;
+        public static final int explosion53=0x7f02004e;
+        public static final int explosion54=0x7f02004f;
+        public static final int explosion55=0x7f020050;
+        public static final int explosion56=0x7f020051;
+        public static final int explosion57=0x7f020052;
+        public static final int explosion58=0x7f020053;
+        public static final int explosion59=0x7f020054;
+        public static final int explosion6=0x7f020055;
+        public static final int explosion60=0x7f020056;
+        public static final int explosion61=0x7f020057;
+        public static final int explosion62=0x7f020058;
+        public static final int explosion63=0x7f020059;
+        public static final int explosion64=0x7f02005a;
+        public static final int explosion65=0x7f02005b;
+        public static final int explosion66=0x7f02005c;
+        public static final int explosion67=0x7f02005d;
+        public static final int explosion68=0x7f02005e;
+        public static final int explosion69=0x7f02005f;
+        public static final int explosion7=0x7f020060;
+        public static final int explosion70=0x7f020061;
+        public static final int explosion71=0x7f020062;
+        public static final int explosion72=0x7f020063;
+        public static final int explosion73=0x7f020064;
+        public static final int explosion74=0x7f020065;
+        public static final int explosion75=0x7f020066;
+        public static final int explosion76=0x7f020067;
+        public static final int explosion77=0x7f020068;
+        public static final int explosion78=0x7f020069;
+        public static final int explosion79=0x7f02006a;
+        public static final int explosion8=0x7f02006b;
+        public static final int explosion80=0x7f02006c;
+        public static final int explosion81=0x7f02006d;
+        public static final int explosion9=0x7f02006e;
+        public static final int ic_launcher=0x7f02006f;
+        public static final int invincible1=0x7f020070;
+        public static final int invincible2=0x7f020071;
+        public static final int invincible3=0x7f020072;
+        public static final int invincible4=0x7f020073;
+        public static final int invincible5=0x7f020074;
+        public static final int invincible6=0x7f020075;
+        public static final int invincible7=0x7f020076;
+        public static final int invincible8=0x7f020077;
+        public static final int invincible_airplane=0x7f020078;
+        public static final int linearlayout_bg=0x7f020079;
+        public static final int mainactivitywallpaper=0x7f02007a;
+        public static final int mainbackground=0x7f02007b;
+        public static final int notification_icon=0x7f02007c;
+        public static final int password=0x7f02007d;
+        public static final int sat1=0x7f02007e;
+        public static final int sat10=0x7f02007f;
+        public static final int sat11=0x7f020080;
+        public static final int sat12=0x7f020081;
+        public static final int sat13=0x7f020082;
+        public static final int sat14=0x7f020083;
+        public static final int sat15=0x7f020084;
+        public static final int sat16=0x7f020085;
+        public static final int sat17=0x7f020086;
+        public static final int sat18=0x7f020087;
+        public static final int sat2=0x7f020088;
+        public static final int sat3=0x7f020089;
+        public static final int sat4=0x7f02008a;
+        public static final int sat5=0x7f02008b;
+        public static final int sat6=0x7f02008c;
+        public static final int sat7=0x7f02008d;
+        public static final int sat8=0x7f02008e;
+        public static final int sat9=0x7f02008f;
+        public static final int studylink_icon=0x7f020090;
+        public static final int user=0x7f020091;
+        public static final int vacuumpilot_icon=0x7f020092;
+    }
+    public static final class id {
+        public static final int title1=0x7f080000;
+        public static final int title2=0x7f080001;
+    }
+    public static final class layout {
+        public static final int activity_main=0x7f030000;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
+        public static final int app_name=0x7f060000;
     }
     public static final class style {
         /** 
@@ -85,17 +210,17 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
         /**  the theme applied to the application or activity 
          */
-        public static final int CustomActionBarTheme=0x7f060003;
-        public static final int Divider=0x7f060002;
+        public static final int CustomActionBarTheme=0x7f070003;
+        public static final int Divider=0x7f070002;
         /**  ActionBar styles 
          */
-        public static final int MyActionBar=0x7f060004;
+        public static final int MyActionBar=0x7f070004;
     }
 }

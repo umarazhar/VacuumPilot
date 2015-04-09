@@ -21,7 +21,20 @@ public class GravityWell extends GameObject{
     public GravityWell(SpriteManager image, int x, int y) {
         super(image, x, y);
 
+        setWidth(DEFAULT_WIDTH);
+        setHeight(DEFAULT_HEIGHT);
+
         setState(GROWING_STATE);
+    }
+
+    public GravityWell(int x, int y) {
+        super.setX(x);
+        super.setY(y);
+
+        setState(GROWING_STATE);
+
+        setWidth(DEFAULT_WIDTH);
+        setHeight(DEFAULT_HEIGHT);
     }
 
     public void update() {

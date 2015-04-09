@@ -2,6 +2,7 @@ package com.gamedesign.vacuumpilot.physics;
 
 import com.gamedesign.vacuumpilot.game.GravityWell;
 import com.gamedesign.vacuumpilot.game.PhysicsGameObject;
+import com.gamedesign.vacuumpilot.game.Player;
 
 import java.util.ArrayList;
 
@@ -59,7 +60,8 @@ public class PhysicsHandler {
                 }
             }
 
-            tmp.update();
+            if (tmp.getClass() != Player.class)
+                tmp.update();
         }
 
         updateGravityWells();

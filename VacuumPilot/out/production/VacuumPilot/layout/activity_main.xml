@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainactivitywallpaper">
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36pt"
+        android:textAlignment="center"
+        android:textColor="@color/orange1"
+        android:text="Vacuum" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title1"
+        android:textSize="36pt"
+        android:textAlignment="center"
+        android:textColor="@color/orange1"
+        android:text="Pilot" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/orange1"
+        android:textColor="@color/blue"
+        android:textSize="16pt"
+        android:text="Start"
+        android:onClick="startGame"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/orange1"
+        android:textColor="@color/blue"
+        android:textSize="16pt"
+        android:text="HighScore" />
+
+
+
+</RelativeLayout>

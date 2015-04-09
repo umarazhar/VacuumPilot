@@ -1,9 +1,11 @@
 package com.gamedesign.vacuumpilot.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
-import com.gamedesign.vacuumpilot.display.SurfaceManager;
+import com.gamedesign.vacuumpilot.R;
 
 
 /**
@@ -13,8 +15,8 @@ public class MainActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SurfaceManager surfaceManager = new SurfaceManager(this);
-        setContentView(surfaceManager);
+//        SurfaceManager surfaceManager = new SurfaceManager(this);
+        setContentView(R.layout.activity_main);
 
     }
 
@@ -28,5 +30,10 @@ public class MainActivity extends Activity {
 
     protected void onStop() {
         super.onStop();
+    }
+
+    public void startGame(View v) {
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
     }
 }

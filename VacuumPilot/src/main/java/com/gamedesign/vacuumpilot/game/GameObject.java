@@ -28,7 +28,7 @@ public class GameObject {
         width = image.getCurrentImage().getWidth();
         height = image.getCurrentImage().getHeight();
 
-        this.image = image;
+        setImage(image);
     }
 
     public GameObject(SpriteManager image, int x, int y) {
@@ -38,7 +38,8 @@ public class GameObject {
         this.width = image.getCurrentImage().getWidth();
         this.height = image.getCurrentImage().getHeight();
 
-        this.image = image;
+        setImage(image);
+
     }
 
     public GameObject(int x, int y, int width, int height) {
@@ -86,8 +87,14 @@ public class GameObject {
 
     public void setImage(SpriteManager image) {
         this.image = image;
+        recalcDimensions();
 //        this.image = Library.resizedBitmap(image, width, height);
 
+    }
+
+    public void recalcDimensions() {
+        this.width = this.image.getWidth();
+        this.height = this.image.getHeight();
     }
 
     public int getWidth() {
